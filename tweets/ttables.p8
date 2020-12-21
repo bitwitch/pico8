@@ -4,29 +4,25 @@ __lua__
 -- times tables
 -- bitwitch
 
-p={}
-t=1
-s=0
-w=6.28
-
-i=0
+p={}s=0w=6.28i=0
 for a=0,w,w/100 do
- p[i]={x=64+flr(62*cos(a/w)+.5),y=64+flr(62*sin(a/w)+.5)}
- i+=1
+p[i]={x=64+flr(62*cos(a/w)+.5),y=64+flr(62*sin(a/w)+.5)}
+i+=1
 end
-
 ::_::
 cls()
-s+=0.008; 
-for i=0,#p do 
-  a=w/#p*i%#p
-  n=w/#p*(i*2%#p)
-  if (a<n) n=n-w
-  d=a*(1-s)+n*s
-  line(p[i].x,p[i].y,62*cos(d/w)+64,62*sin(d/w)+64,12)
+s+=0.008
+for i=0,#p do
+a=w/#p*i%#p
+n=w/#p*(i*2%#p)
+if(a<n)n=n-w
+d=a*(1-s)+n*s
+line(p[i].x,p[i].y,62*cos(d/w)+64,62*sin(d/w)+64,12)
 end
 flip()
 goto _
+
+
 
 __gfx__
 00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
